@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/img_singer"
+        android:layout_width="@dimen/width_ImageView_info_singer"
+        android:layout_height="@dimen/height_ImageView_info_singer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_top_ImageView_info_singer"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/trieuledinh" />
+
+    <TextView
+        android:id="@+id/tv_song"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/marginTop_tv_song_info_singer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_singer"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/textSize_tv_song_info_singer" />
+
+    <TextView
+        android:id="@+id/tv_singer"
+        android:layout_below="@id/tv_song"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/textSize_tv_singer_info_singer" />
+
+
+</RelativeLayout>
