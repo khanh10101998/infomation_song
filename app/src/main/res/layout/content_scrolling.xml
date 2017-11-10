@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:id="@+id/content_scrolling"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -20,22 +21,27 @@
         android:text="lyrics:"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-    <android.support.v4.widget.NestedScrollView
+    <LinearLayout
+        android:id="@+id/line_lyrics"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/height_scrollView"
+        android:layout_height="100dp">
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:scrollbars="vertical">
 
         <TextView
             android:id="@+id/tv_lyrics"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
 
             android:background="#f0f0f0"
             android:scrollHorizontally="false"
 
             android:textAlignment="center" />
     </android.support.v4.widget.NestedScrollView>
-
+    </LinearLayout>
     <LinearLayout
         android:nestedScrollingEnabled="true"
         android:layout_width="match_parent"
@@ -69,7 +75,7 @@
 
         <com.google.android.youtube.player.YouTubePlayerView
             android:id="@+id/youtube"
-            android:layout_width="@dimen/width_YouTubePlayerView_content_scrolling"
+            android:layout_width="match_parent"
             android:layout_height="@dimen/height_YouTubePlayerView_content_scrolling"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/margin_top_YouTubePlayerView_content_scrolling">

@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.view.ViewCompat;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,6 +41,7 @@ public class ScrollingActivity extends YouTubeBaseActivity implements YouTubePla
     ShareDialog shareDialog;
     AccessTokenTracker accessTokenTracker;
     AccessToken accessToken;
+    LinearLayout line_lyrics;
     CallbackManager callbackManager;
     CollapsingToolbarLayout collapsing_toolbar;
     AppBarLayout appBarLayout;
@@ -75,6 +79,7 @@ public class ScrollingActivity extends YouTubeBaseActivity implements YouTubePla
     }
 
     private void initDisplay() {
+
     }
 
     private void initEvent() {
@@ -93,19 +98,28 @@ public class ScrollingActivity extends YouTubeBaseActivity implements YouTubePla
         mListener = new AppBarLayout.OnOffsetChangedListener() {
             @Override
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
-
+                Display display = getWindowManager().getDefaultDisplay();
                 if (collapsing_toolbar.getHeight() + verticalOffset < 2 * ViewCompat.getMinimumHeight(collapsing_toolbar)) {
                     name_song_activity_information_song.animate().alpha(1).setDuration(600);
-                    System.out.println("an khanh ne");
+
+
+
+                    LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(display.getWidth(),dpToPx(200));
+                    line_lyrics.setLayoutParams(param);
                 } else {
                     name_song_activity_information_song.animate().alpha(0).setDuration(600);
-                    System.out.println("hien khanh ne");
+                    LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(display.getWidth(),dpToPx(100));
+                    line_lyrics.setLayoutParams(param);
                 }
             }
         };
         appBarLayout.addOnOffsetChangedListener(mListener);
 
 
+    }
+    public int dpToPx(int dp) {
+        DisplayMetrics displayMetrics = ScrollingActivity.this.getResources().getDisplayMetrics();
+        return Math.round(dp * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
     }
 
     private void initData() {
@@ -116,14 +130,15 @@ public class ScrollingActivity extends YouTubeBaseActivity implements YouTubePla
     }
 
     private void initControl() {
-        collapsing_toolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
-        appBarLayout = (AppBarLayout) findViewById(R.id.appbar);
         name_song_activity_information_song = (TextView) findViewById(R.id.name_song_activity_information_song);
-        tv_lyrics = (TextView) findViewById(R.id.tv_lyrics);
-        tv_song = (TextView) findViewById(R.id.tv_song);
-        tv_singer = (TextView) findViewById(R.id.tv_singer);
-        youTubePlayerview = (YouTubePlayerView) findViewById(R.id.youtube);
-        shareButton = (ShareButton) findViewById(R.id.fb_share_button);
+        collapsing_toolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+        appBarLayout       = (AppBarLayout) findViewById(R.id.appbar);
+        line_lyrics        = (LinearLayout) findViewById(R.id.line_lyrics);
+        tv_lyrics          = (TextView) findViewById(R.id.tv_lyrics);
+        tv_song            = (TextView) findViewById(R.id.tv_song);
+        tv_singer          = (TextView) findViewById(R.id.tv_singer);
+        youTubePlayerview  = (YouTubePlayerView) findViewById(R.id.youtube);
+        shareButton        = (ShareButton) findViewById(R.id.fb_share_button);
         youTubePlayerview.initialize(API_KEY, this);
     }
 
