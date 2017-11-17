@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="hongkhanh.scrolling">
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <application
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
-        <provider android:authorities="com.facebook.app.FacebookContentProvider1711219358952971"
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <provider
             android:name="com.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider1711219358952971"
             android:exported="true" />
-        <!--<provider android:authorities="com.facebook.app.FacebookContentProvider{1845489085723663}"-->
-            <!--android:name="com.facebook.FacebookContentProvider"-->
-            <!--android:exported="true"/>-->
+        <!-- <provider android:authorities="com.facebook.app.FacebookContentProvider{1845489085723663}" -->
+        <!-- android:name="com.facebook.FacebookContentProvider" -->
+        <!-- android:exported="true"/> -->
         <activity
             android:name=".ScrollingActivity"
             android:label="@string/app_name"
@@ -27,9 +32,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.facebook.FacebookActivity"
-            android:configChanges=
-                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
     </application>
 

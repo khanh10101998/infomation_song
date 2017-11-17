@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "230675202467",
+    "project_id": "play-video-online-185401"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:230675202467:android:52923679320ad5e8",
+        "android_client_info": {
+          "package_name": "hongkhanh.scrolling"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "230675202467-efbac9e43kgiju8v5uotutmsgl4pgqff.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "230675202467-75e8da0k8ghtki5inv885kkcvhmqcqk3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "hongkhanh.scrolling",
+            "certificate_hash": "40900f6dc61bcad6d0edaad1ab6d45b6822a7f34"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC65v_p8G75Tm43W-lswQPCza1uaqqmMTE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
